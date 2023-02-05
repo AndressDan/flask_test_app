@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APP</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='style.css', v=1)}}">
+</head>
+<body>
+<div class="navbar">
+    <a href="/add_test" class="nav-element">Add test</a>
+    <a href="/pass_test" class="nav-element">Pass test</a>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

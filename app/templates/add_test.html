@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="div-for-form">
+<form action="add_test" method="post">
+    <label for="question">Question</label>
+    <input type="text" name="question" id="question">
+
+    <label for="ans1">First answer</label>
+    <input type="text" name="ans1" id="ans1">
+
+    <label for="ans2">Second answer</label>
+    <input type="text" name="ans2" id="ans2">
+
+    <label for="correct">Correct answer</label>
+    <input type="text" name="correct", id="correct">
+
+    <label for="submit">Submit</label>
+    <input type="submit" name="submit" id="submit">
+
+</form>
+</div>
+{% with msg = get_flashed_messages()[0] %}
+    {% if msg %}
+            {% if msg == "success" %}
+                <div class="add-to-db" id="success">{{ msg }}</div>
+            {% else %}
+                <div class="add-to-db" id="error">{{ msg }}</div>
+            {% endif %}
+    {% endif %}
+{% endwith %}
+{% endblock %}
